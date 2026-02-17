@@ -1,4 +1,4 @@
-team name-{pycharmers}
+#team name-{pycharmers}
 def count_inventory(fruit_list: list[str]) -> dict[str, int]:
     """
     Create a frequency dictionary from a list of fruits.
