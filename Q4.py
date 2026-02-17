@@ -1,4 +1,4 @@
-team name-{pycharmers}
+#team name-{pycharmers}
 def get_ticket_price(age: int, is_student: bool) -> int:
     """
     Determine ticket price based on age and student status.
