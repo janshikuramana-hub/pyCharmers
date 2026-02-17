@@ -1,5 +1,4 @@
-team name -{pycharmers}
-# Team Name:pycharmers
+#team name -{pycharmers}
 def average_passing_grades(grades: list[int]) -> float:
     """
     Calculate the average of grades that are 50 or higher.
