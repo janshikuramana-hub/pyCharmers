@@ -1,4 +1,4 @@
-team name-{pycharmers}
+#team name-{pycharmers}
 def calculate(expression: str) -> float:
     """
     Evaluate mathematical expression without using eval().
