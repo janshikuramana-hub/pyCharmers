@@ -1,1 +1,50 @@
 team name-{pycharmers}
+def calculate(expression: str) -> float:
+    """
+    Evaluate mathematical expression without using eval().
+    Args:
+        expression : Mathematical expression as string
+    Returns:
+        Result rounded to 2 decimal places
+    """
+    # Remove spaces
+    s = expression.replace(" ", "")
+    # Convert string into tokens (numbers and operators)
+    tokens = []
+    num = ""
+    for ch in s:
+        if ch in "+-*/":
+            if num != "":
+                tokens.append(int(num))
+                num = ""
+            tokens.append(ch)
+        else:
+            num += ch
+    if num != "":
+        tokens.append(int(num))
+    # Handle * and / first
+    stack = [tokens[0]]
+    i = 1
+    while i < len(tokens):
+        op = tokens[i]
+        val = tokens[i + 1]
+        if op == "*":
+            stack[-1] = stack[-1] * val
+        elif op == "/":
+            stack[-1] = stack[-1] / val
+        else:
+            stack.append(op)
+            stack.append(val)
+        i += 2
+    # Now handle + and -
+    result = stack[0]
+    i = 1
+    while i < len(stack):
+        op = stack[i]
+        val = stack[i + 1]
+        if op == "+":
+            result += val
+        else:
+            result -= val
+        i += 2
+    return round(float(result), 2)
